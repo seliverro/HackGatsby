@@ -1,4 +1,4 @@
-const axious = require('axios');
+const fetch = require('node-fetch');
 
 const body = {
     "top": 5,
@@ -21,7 +21,7 @@ const body = {
 };
 
 exports.sourceNodes =  async () =>{
-    const response =  await axious('https://uat-api.euromoneydigital.com/data-service/queries/telecoms-articles/search',{
+    const response =  await fetch('https://uat-api.euromoneydigital.com/data-service/queries/telecoms-articles/search',{
         method: 'post',
         body:    JSON.stringify(body),
         headers: { 
